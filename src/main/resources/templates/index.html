@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Index</title>
+
+        <!-- Load Bootstrap CSS from JAR archive file -->
+        <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" type="image/x-icon" href="icons/icon.png">
+    </head>    <body class="d-flex flex-column h-100">
+
+    <!-- Entire visible page content (except footer) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <img class="navbar-brand"  src="/images/batman_logo_PNG5.png"  height="100" width="170" alt="batman">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+
+
+
+
+    <section id="intro ">
+        <div class="container-lg mt-5 p-5 ">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-5 text-start text-md-start">
+                    <h6 class="display-5 text-muted text-start ">Hello,I'm</h6>
+                    <h1>
+                        <div class="display-4 " style='color: #282e3c'>Bruce Wayne </div>
+                        <div class="h2 text-muted">A.K.A Batman</div>
+                    </h1>
+                    <p class=" lead my-4 text-muted">Batman is a superhero appearing in American comic books published by DC Comics</p>
+                    <a href="#pricing" class="btn btn-secondary btn-lg" style="background:#fdff00;color: 	#242424;">My Work</a>
+                </div>
+
+                <div class="col-md-5 text-center d-none d-md-block">
+                    <img src="./images/batman.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="intro ">
+        <h1 class=" h2 text-center"> ABOUT ME</h1>
+        <div class="container-lg mt-5 p-5 ">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-5 text-start text-md-start">
+                    <h1>
+                        <div class="h4 text-muted"> The protector of Gotham City,
+                        </div>
+                    </h1>
+                    <p class=" lead my-4 h6 text-muted">
+                        Batman was originally introduced as a ruthless vigilante who frequently killed or maimed criminals, but evolved into a character with a stringent moral code and strong sense of justice. Unlike most superheroes, Batman does not possess any superpowers, instead relying on his intellect, fighting skills, and wealth.</p>
+                    <div class=" d-flex justify-content-around ">
+                        <span class="h1">192</span>
+                        <span class="h1 ">81</span>
+                        <span class="h1 ">21</span>
+                    </div>
+                    <div class="d-flex  justify-content-around ">
+                        <span class="h6 small text-muted">IQ </span>
+                        <span class="h6 small text-muted ">Age</span>
+                        <span class="h6 small text-muted">Kills</span >
+                    </div>
+
+
+                    <span class="col-12 justify-content-between ">
+                    <i class=" h5 bi bi-facebook"></i>
+                    <i class=" h5 bi bi-twitter"></i>
+                    <i class=" h5 bi bi-instagram"></i>
+                    <i class=" h5 bi bi-linkedin"></i>
+                     </span>
+                </div>
+
+                <div class="col-md-5  d-none d-md-block pb-5  mb-5">
+                    <div>Martial Arts</div>
+                    <div class="progress mb-3">
+                        <div  class="progress-bar " role="progressbar" style="width: 25%;background-color: #505c7c;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div>Speed</div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar " role="progressbar" style="width: 50%;background-color: #505c7c;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div>intelligence</div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar " role="progressbar" style="width: 75%;background-color: #505c7c;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div>Java + Spring Boot</div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar " role="progressbar" style="width: 100%;background-color: #505c7c;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="h1 text-center">What I do</div>
+    <div id="about" class="container justfiy-content-center">
+        <div  class="row col-12 justify-content-around container-lg mt-5 p-5 ">
+
+
+            <div th:each="batmanWorkExperience : ${batmanWorkExperiences}"  class="card col-3 " style="width: 18rem;">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-danger"><i class="fas fa-code"></i></h5>
+                    <p class="card-text display-6" th:text="${batmanWorkExperience.getTitle()}"></p>
+                    <p class="text-muted" th:text="${batmanWorkExperience.getText()}"></p>
+                </div>
+            </div>
+
+
+            <!--     <div class="card col-3" style="width: 18rem;">
+                     <div class="card-body text-center">
+                         <h5 class="card-title text-danger"><i class="fas fa-image"></i></h5>
+                         <p class="card-text display-6">Expert detective</p>
+                         <p class="text-muted">
+                             Operating in Gotham City, he serves as its protector, using the symbol of a bat to strike fear into the hearts of criminals</p>
+                     </div>
+                 </div>-->
+
+
+            <!--
+                        <div class="card col-3" style="width: 18rem;">
+                            <div class="card-body text-center ">
+                                <h5 class="card-title text-danger"><i class="fas fa-lightbulb"></i></h5>
+                                <p class="card-text display-6">Wayne Foundation </p>
+                                <p class="text-muted"> this organization does charity works.</p>
+                            </div>
+                        </div>
+            -->
+
+
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container-fluid text-center">
+            <span>&copy; Bern University of Applied Sciences</span>
+        </div>
+    </footer>
+
+    <script src="/js/bootstrap.min.js"></script>
+    </body>
+
+
+
+</html>

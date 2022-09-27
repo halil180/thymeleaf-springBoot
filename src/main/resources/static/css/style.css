@@ -1,0 +1,44 @@
+body {
+    background-image: url('../images/backgroundImage_opacity_8.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.colorOS {
+    background-color: rgba(148, 138, 84) !important;
+}
+.colorJP {
+    background-color: rgba(79, 129, 189) !important
+}
+.colorJW {
+    background-color: rgba(141, 180,226) !important
+}
+.colorWSE {
+    background-color: rgba(204, 153, 255) !important
+}
+.colorGCS {
+    background-color: rgba(96, 73, 122) !important
+}
+.colorS {
+    background-color: rgba(221, 8, 6) !important
+}
+.colorMO {
+    background-color: rgba(196, 215, 155) !important
+}
+.colorWD {
+    background-color: rgba(226, 107,10) !important
+}
+.colorP {
+    background-color: rgba(177, 160, 198) !important
+}
+.colorOS {
+    background-color: rgba(147, 137, 82) !important
+}
+.colorNW {
+    background-color: rgba(196, 189, 151) !important
+}
+.colorDB {
+    background-color: rgba(250, 191, 143) !important
+}
+.colorCH {
+    background-color: rgba(118, 147, 60) !important
+}
