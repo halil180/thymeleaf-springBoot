@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -39,8 +39,29 @@
   <div class="h2 text-light">You either die a hero, or you live long enough to see yourself become the villain.</div>
 </div>
 
-<div id="contact" class="h1 text-center mt-5">Contact Me</div>
-
+<div id="contact" class="display-6 text-center mt-5">if you want to contact me you have to  type your first name and last name, and i will find you</div>
+<div>
+  <form th:object="${person}"  th:action="@{/createPerson}" method="post" class=" d-flex justify-content-center flex-column align-items-center">
+    <input type="text" th:field="*{firstName}" placeholder="type firstname" class="m-1">
+    <input type="text" th:field="*{lastName}" placeholder="type lastname"  class="m-1">
+    <button type="submit" class="btn btn-primary m-1">submit</button>
+  </form>
+  <p th:unless="${persons.size()} > 0 " class="text-center display-4">
+    no person found :(
+  </p>
+</div>
+<table  class="table" th:if="${persons.size() > 0}">
+  <thead>
+  <tr>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+  </tr>
+  </thead>
+  <tr th:each="person : ${persons}">
+    <td th:text="${person.getFirstName()}">  </td>
+    <td th:text="${person.getLastName()}">  </td>
+  </tr>
+</table>
 
 <!-- Footer -->
 <footer class="footer mt-auto py-3">
